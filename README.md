@@ -1,1 +1,1 @@
-# SE_Project
+# This is our project in Software engineering course.
