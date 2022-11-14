@@ -1,1 +1,1 @@
-# This is our project in Software engineering course.
+# Welcome to our UWC 2.0 project!
