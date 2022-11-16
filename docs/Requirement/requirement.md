@@ -26,7 +26,7 @@ both time and fuel.
 - Integrating a calculating engine and tracking system to predict the remaining time that
 collectors arrive.
 - Notification classification makes it easy for users to reach.
-- Can upgrade and expand in the future.\
+- Can upgrade and expand in the future.
 - --
 To help this software running effectively, we needs:
 - Each employer has a smartphone or Laptop to install this app.
