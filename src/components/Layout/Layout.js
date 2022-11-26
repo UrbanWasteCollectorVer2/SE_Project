@@ -34,7 +34,7 @@ const Layout = (props) => {
             <Route path="/template" exact render={() => <Redirect to="template/dashboard"/>} />
             <Route path="/template/dashboard" exact component={Dashboard}/>
             <Route path="/template/typography" exact component={Typography} />
-            <Route path="/template/tables" exact component={Tables} />
+            <Route path="/template/HR" exact component={Tables} />
             <Route path="/template/notifications" exact component={Notifications} />
             <Route path="/template/ui-elements" exact render={() => <Redirect to={"/template/ui-elements/charts"} />} />
             <Route path="/template/ui-elements/charts" exact component={Charts} />

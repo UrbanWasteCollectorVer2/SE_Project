@@ -1,0 +1,50 @@
+[
+ {
+  "ID": 1,
+  "Name": "Trọng Nghĩa",
+  "PhoneNum": "0868345468",
+  "Status": "Working"
+ },
+ {
+  "ID": 2,
+  "Name": "Nghĩa Nguyễn",
+  "PhoneNum": "0903339939",
+  "Status": "Busy"
+ },
+ {
+  "ID": 3,
+  "Name": "Tuấn Đức",
+  "PhoneNum": "0524343279",
+  "Status": "Absent"
+ },
+ {
+  "ID": 4,
+  "Name": "Nguyễn Đức",
+  "PhoneNum": "0333444555",
+  "Status": "Ready"
+ },
+ {
+  "ID": 5,
+  "Name": "Tuấn Nguyễn",
+  "PhoneNum": "0878887888",
+  "Status": "Working"
+ },
+ {
+  "ID": 6,
+  "Name": "Mạnh Cường",
+  "PhoneNum": "0777388878",
+  "Status": "Working"
+ },
+ {
+  "ID": 7,
+  "Name": "Võ Mạnh",
+  "PhoneNum": "0939392468",
+  "Status": "Ready"
+ },
+ {
+  "ID": 8,
+  "Name": "Phạm Huy",
+  "PhoneNum": "0937777777",
+  "Status": "Absent"
+ }
+]

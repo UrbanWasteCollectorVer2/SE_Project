@@ -28,7 +28,7 @@ import user from "../../assets/user.svg";
 import statsPie from "../../assets/dashboard/statsPie.svg";
 import processing from "../../database/process.json"
 import GoogleMapReact from 'google-map-react'
-
+import Collector from "../../database/Collector.json"
 import s from "./Dashboard.module.scss";
 
 const Dashboard = () => {
@@ -94,7 +94,7 @@ const Dashboard = () => {
                   </UncontrolledDropdown>
                 </div>
                 <ApexActivityChart className="pb-4"/> */}
-                 <GoogleMaps/> 
+                 <GoogleMap/> 
               </Widget>
             </Col>
             {/* <Col xs={12} md={6}>
@@ -341,19 +341,32 @@ const Dashboard = () => {
                     </DropdownMenu>
                   </UncontrolledDropdown>
                 </div>
-                {processing.map((process) =>
-                  <div key={process.id} className={`mt-4 ${s.widgetBlock}`}>
+                {Collector.map((collector) =>
+                  <div key={collector.id} className={`mt-4 ${s.widgetBlock}`}>
                     <div className={s.widgetBody}>
                       <div className="d-flex">
                         {/* <img className="img-fluid mr-2" src={meal} alt="..." /> */}
                         <div className="d-flex flex-column">
-                          <p className="body-2">{process.name}</p>
-                          <p className="body-3 muted">{process.location}</p>
+                          <p className="body-2">{collector.Name}</p>
+                          <p className="body-3 muted">{collector.PhoneNum}</p>
                         </div>
                       </div>
-                      <div className="body-3 muted">
-                        {process.status}
-                      </div>
+                      {collector.Status=='Working'?
+                      <div className="text-primary">
+                        {collector.Status}
+                      </div>:null}
+                      {collector.Status=='Busy'?
+                      <div className="text-warning">
+                        {collector.Status}
+                      </div>:null}
+                      {collector.Status=='Absent'?
+                      <div className="text-secondary">
+                        {collector.Status}
+                      </div>:null}
+                      {collector.Status=='Ready'?
+                      <div className="text-success">
+                        {collector.Status}
+                      </div>:null}
                     </div>
                   </div>
                 )}

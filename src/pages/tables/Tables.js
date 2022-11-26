@@ -95,7 +95,7 @@ const Tables = function () {
             <Col>
               <Widget>
                 <div className={s.tableTitle}>
-                  <div className="headline-2">States Colors</div>
+                  <div className="headline-2">Nhân sự</div>
                   <div className="d-flex">
                     <a href="/#"><img src={searchIcon} alt="Search"/></a>
                     <a href="/#"><img className="d-none d-sm-block" src={cloudIcon} alt="Cloud" /></a>
@@ -118,10 +118,10 @@ const Tables = function () {
                           <label for="checkbox100"/>
                         </div>
                       </th>
-                      <th className="w-25">NAME</th>
-                      <th className="w-25">COMPANY</th>
-                      <th className="w-25">CITY</th>
-                      <th className="w-25">STATE</th>
+                      <th className="w-25   ">     TÊN</th>
+                      <th className="w-25">ĐIỆN THOẠI</th>
+                      <th className="w-25">VAI TRÒ</th>
+                      <th className="w-25">TRẠNG THÁI</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -135,17 +135,34 @@ const Tables = function () {
                           <td>
                             <div className="checkbox checkbox-primary">
                               <input
-                                id={item.id}
+                                id={item.ID}
                                 className="styled"
                                 type="checkbox"
                               />
-                              <Label for={item.id} />
+                              <Label for={item.ID} />
                             </div>
                           </td>
-                          <td className="d-flex align-items-center"><img className={s.image} src={item.img} alt="User"/><span className="ml-3">{item.name}</span></td>
-                          <td>{item.company}</td>
-                          <td>{item.city}</td>
-                          <td>{item.state}</td>
+                          <td className="d-flex align-items-center"><img className={s.image} src={item.img} alt="User"/><span className="ml-3">{item.Name}</span></td>
+                          <td>{item.PhoneNum}</td>
+                          {item.Role==="Collector"?
+                          <td>Tài xế</td>:<td>Nhân viên vệ sinh</td>}
+                          
+                          {item.Status==='Working'?
+                      <td className="text-primary">
+                        {item.Status}
+                      </td>:null}
+                      {item.Status==='Busy'?
+                      <td className="text-warning">
+                        {item.Status}
+                      </td>:null}
+                      {item.Status==='Absent'?
+                      <td className="text-secondary">
+                        {item.Status}
+                      </td>:null}
+                      {item.Status==='Ready'?
+                      <td className="text-success">
+                        {item.Status}
+                      </td>:null}
                         </tr>
                       ))}
                     </tbody>

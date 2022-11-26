@@ -32,7 +32,7 @@ const Sidebar = (props) => {
     <nav className={cn(s.root, {[s.sidebarOpen]: burgerSidebarOpen})} >
       <header className={s.logo}>
         <SofiaLogo/>
-        <span className={s.title}>SOFIA</span>
+        <span className={s.title}>UWC</span>
       </header>
       <ul className={s.nav}>
         <LinksGroup
@@ -45,7 +45,7 @@ const Sidebar = (props) => {
           index="dashboard"
           badge="9"
         />
-        <h5 className={s.navTitle}>TEMPLATE</h5>
+        <h5 className={s.navTitle}>UWC</h5>
         <LinksGroup
           onActiveSidebarItemChange={activeItem => props.dispatch(changeActiveSidebarItem(activeItem))}
           activeItem={props.activeItem}
@@ -61,7 +61,7 @@ const Sidebar = (props) => {
           header="Nhân sự"
           isHeader
           iconName={<i className={'eva eva-grid-outline'}/>}
-          link="/template/tables"
+          link="/template/HR"
           index="tables"
         />
         <LinksGroup
