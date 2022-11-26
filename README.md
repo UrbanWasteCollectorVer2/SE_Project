@@ -1,5 +1,11 @@
 # Welcome to our project
 
+To install react package, run,
+
+```
+yarn install
+```
+
 
 <!-- # 👇 Sofia React Template
 
