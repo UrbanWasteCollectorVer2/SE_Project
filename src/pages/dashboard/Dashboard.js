@@ -36,7 +36,7 @@ const Dashboard = () => {
 
   const toggleCheckbox = (id) => {
     setCheckboxes(checkboxes => checkboxes
-      .map((checkbox, index) => index === id ? !checkbox : checkbox ))
+      .map((checkbox, index) => index === id ? !checkbox : checkbox))
 
 
 
@@ -44,7 +44,7 @@ const Dashboard = () => {
 
   const ref = React.useRef(null);
   const [map, setMap] = React.useState();
-  
+
   const location = {
     address: '1600 Amphitheatre Parkway, Mountain View, california.',
     lat: 37.42216,
@@ -54,7 +54,7 @@ const Dashboard = () => {
   // const Map = ({ location, zoomLevel }) => (
   //   <div className="map">
   //     <h2 className="map-h2">Come Visit Us At Our Campus</h2>
-  
+
   //     <div className="google-map">
   //       <GoogleMapReact
   //         bootstrapURLKeys={{ key: '' }}
@@ -94,7 +94,10 @@ const Dashboard = () => {
                   </UncontrolledDropdown>
                 </div>
                 <ApexActivityChart className="pb-4"/> */}
+<<<<<<< HEAD
                  <GoogleMap/> 
+=======
+>>>>>>> bbf8344dfa468ebd8bf23e9607b563534a091f65
               </Widget>
             </Col>
             {/* <Col xs={12} md={6}>
@@ -369,8 +372,13 @@ const Dashboard = () => {
                       </div>:null}
                     </div>
                   </div>
-                )}
-              </Widget>
+                  <div className="body-3 muted">
+                    {process.status}
+                  </div>
+                </div>
+              </div>
+            )}
+          </Widget>
 
 
         </Col>
