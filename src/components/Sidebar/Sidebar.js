@@ -60,13 +60,8 @@ const Sidebar = (props) => {
           activeItem={props.activeItem}
           header="Nhân sự"
           isHeader
-<<<<<<< HEAD
           iconName={<i className={'eva eva-grid-outline'}/>}
           link="/template/HR"
-=======
-          iconName={<i className={'eva eva-grid-outline'} />}
-          link="/template/tables"
->>>>>>> bbf8344dfa468ebd8bf23e9607b563534a091f65
           index="tables"
         />
         <LinksGroup
