@@ -137,7 +137,7 @@ const Header = (props) => {
             <DropdownItem className={s.dropdownProfileItem}><MessagesIcon/><span>Tin nhắn</span></DropdownItem>
             <NavItem>
               <NavLink onClick={() => doLogout()} href="#">
-                <button className="btn btn-primary rounded-pill mx-auto logout-btn" type="submit"><img src={logoutIcon} alt="Logout"/><span className="ml-1">Logout</span></button>
+                <button className="btn btn-primary rounded-pill mx-auto logout-btn" type="submit"><img src={logoutIcon} alt="Logout"/><span className="ml-1">Đăng xuất</span></button>
               </NavLink>
             </NavItem>
           </DropdownMenu>

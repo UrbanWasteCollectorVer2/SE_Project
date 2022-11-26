@@ -12,6 +12,7 @@ import {
 } from "reactstrap";
 import Widget from "../../components/Widget/Widget.js";
 import ApexActivityChart from "./components/ActivityChart.js";
+import GoogleMap from "./components/GoogleMap.js";
 
 import meal1 from "../../assets/dashboard/meal-1.svg";
 import meal2 from "../../assets/dashboard/meal-2.svg";
@@ -35,7 +36,7 @@ const Dashboard = () => {
 
   const toggleCheckbox = (id) => {
     setCheckboxes(checkboxes => checkboxes
-      .map((checkbox, index) => index === id ? !checkbox : checkbox ))
+      .map((checkbox, index) => index === id ? !checkbox : checkbox))
 
 
 
@@ -43,7 +44,7 @@ const Dashboard = () => {
 
   const ref = React.useRef(null);
   const [map, setMap] = React.useState();
-  
+
   const location = {
     address: '1600 Amphitheatre Parkway, Mountain View, california.',
     lat: 37.42216,
@@ -53,7 +54,7 @@ const Dashboard = () => {
   // const Map = ({ location, zoomLevel }) => (
   //   <div className="map">
   //     <h2 className="map-h2">Come Visit Us At Our Campus</h2>
-  
+
   //     <div className="google-map">
   //       <GoogleMapReact
   //         bootstrapURLKeys={{ key: '' }}
@@ -171,12 +172,12 @@ const Dashboard = () => {
                   <div className="d-flex mb-4">
                     <img className="py-1 mr-2 img-fluid" src={heartYellow} alt="..." />
                     <div className="d-flex flex-column">
-                      <p className="headline-3">Text</p>
-                      <p className="body-2">Num<span className="body-3 muted">/ ber</span></p>
+                      <p className="headline-3">Xe số 1</p>
+                      <p className="body-2">Tốt<span className="body-3 muted"> - Thu gom</span></p>
                     </div>
                   </div>
                   <div>
-                    <Progress color="secondary-yellow" className={`progress-xs ${s.mutedYellow}`} value="75" />
+                    <Progress color="secondary-yellow" className={`progress-xs ${s.mutedYellow}`} value="20" />
                   </div>
                 </div>
               </Widget>
@@ -325,37 +326,37 @@ const Dashboard = () => {
               </div>
             </a>
           </Widget> */}
-           <Widget className="widget-p-md">
-                <div className="d-flex justify-content-between">
-                  <div className="headline-3 d-flex align-items-center">Proccessing</div>
-                  <UncontrolledDropdown>
-                    <DropdownToggle caret>
-                      &nbsp; Xe &nbsp;
-                    </DropdownToggle>
-                    <DropdownMenu>
-                      <DropdownItem>Tài xế</DropdownItem>
-                      <DropdownItem>Xe</DropdownItem>
-                      <DropdownItem>Lao công</DropdownItem>
-                    </DropdownMenu>
-                  </UncontrolledDropdown>
-                </div>
-                {processing.map((process) =>
-                  <div key={process.id} className={`mt-4 ${s.widgetBlock}`}>
-                    <div className={s.widgetBody}>
-                      <div className="d-flex">
-                        {/* <img className="img-fluid mr-2" src={meal} alt="..." /> */}
-                        <div className="d-flex flex-column">
-                          <p className="body-2">{process.name}</p>
-                          <p className="body-3 muted">{process.location}</p>
-                        </div>
-                      </div>
-                      <div className="body-3 muted">
-                        {process.status}
-                      </div>
+          <Widget className="widget-p-md">
+            <div className="d-flex justify-content-between">
+              <div className="headline-3 d-flex align-items-center">Tài xế</div>
+              <UncontrolledDropdown>
+                <DropdownToggle caret>
+                  &nbsp; Tài xế &nbsp;
+                </DropdownToggle>
+                <DropdownMenu>
+                  <DropdownItem>Tài xế</DropdownItem>
+                  <DropdownItem>Xe</DropdownItem>
+                  <DropdownItem>Lao công</DropdownItem>
+                </DropdownMenu>
+              </UncontrolledDropdown>
+            </div>
+            {processing.map((process) =>
+              <div key={process.id} className={`mt-4 ${s.widgetBlock}`}>
+                <div className={s.widgetBody}>
+                  <div className="d-flex">
+                    {/* <img className="img-fluid mr-2" src={meal} alt="..." /> */}
+                    <div className="d-flex flex-column">
+                      <p className="body-2">{process.name}</p>
+                      <p className="body-3 muted">{process.location}</p>
                     </div>
                   </div>
-                )}
-              </Widget>
+                  <div className="body-3 muted">
+                    {process.status}
+                  </div>
+                </div>
+              </div>
+            )}
+          </Widget>
 
 
         </Col>
