@@ -40,7 +40,7 @@ const Login = (props) => {
     setState({ ...state, [event.target.name]: event.target.value })
   }
 
-  const { from } = props.location.state || { from: { pathname: '/template' } };
+  const { from } = props.location.state || { from: { pathname: '/UWC' } };
   if (hasToken(JSON.parse(localStorage.getItem('authenticated')))) {
     return (
       <Redirect to={from} />
@@ -80,7 +80,7 @@ const Login = (props) => {
                 <FormGroup className="my-3">
                   <div className="d-flex justify-content-between">
                     <FormText>Mật khẩu</FormText>
-                    <Link to="/error">Quên mật khẩu?</Link>
+                    <Link to="/register">Quên mật khẩu?</Link>
                   </div>
                   <Input
                     id="password"
@@ -96,8 +96,8 @@ const Login = (props) => {
                 <div className="bg-widget d-flex justify-content-center">
                   <Button className="rounded-pill my-3" type="submit" color="secondary-red">Đăng nhập</Button>
                 </div>
-                <p className="dividing-line my-3">&#8195;Hoặc&#8195;</p>
-                <div className="d-flex align-items-center my-3">
+                {/* <p className="dividing-line my-3">&#8195;Hoặc&#8195;</p>
+                 <div className="d-flex align-items-center my-3">
                   <p className="social-label mb-0">Đăng nhập với</p>
                   <div className="socials">
                     <a href="https://flatlogic.com/"><GoogleIcon /></a>
@@ -107,7 +107,7 @@ const Login = (props) => {
                     <a href="https://flatlogic.com/"><LinkedinIcon /></a>
                   </div>
                 </div>
-                {/* <Link to="/register">Don’t have an account? Sign Up here</Link> */}
+                <Link to="/register">Don’t have an account? Sign Up here</Link>  */}
               </form>
             </Widget>
           </Col>

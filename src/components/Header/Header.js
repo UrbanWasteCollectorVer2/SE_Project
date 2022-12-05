@@ -80,7 +80,7 @@ const Header = (props) => {
       <Form className="d-none d-sm-block" inline>
         <FormGroup>
           <InputGroup className='input-group-no-border'>
-            <Input id="search-input" placeholder="Search Dashboard" className='focus'/>
+            <Input id="search-input" placeholder="Tìm kiếm" className='focus'/>
             <InputGroupAddon addonType="prepend">
               <span>
                 <SearchBarIcon/>
@@ -106,22 +106,22 @@ const Header = (props) => {
             </div>
           </DropdownToggle>
           <DropdownMenu right className="navbar-dropdown notifications-dropdown" style={{ width: "340px" }}>
-            <DropdownItem><img src={basketIcon} alt="Basket Icon"/><span>12 new orders have arrived today</span></DropdownItem>
-            <DropdownItem>
+            <DropdownItem href="/#/UWC/notifications"><img src={basketIcon} alt="Basket Icon"/><span>12 Tin nhắn mới từ Nghĩa</span></DropdownItem>
+            <DropdownItem href="/#/UWC/notifications">
               <div>
                 <div className="d-flex flex-row mb-1">
                   <img src={mariaImage} alt="Maria" className={s.mariaImage} />
                   <div className="d-flex flex-column">
-                    <p className="body-3">Maria</p>
-                    <p className="label muted">15 min ago</p>
+                    <p className="body-3">Nghĩa Nguyễn</p>
+                    <p className="label muted">15 phút trước</p>
                   </div>
                 </div>
                 <img src={notificationImage} alt="Notification Icon" className={s.notificationImage}/>
-                <p className="body-2 muted">It is just a simple image that can define th..</p>
+                <p className="body-2 muted">Em chụp hình gửi chị thùng rác số 4</p>
               </div>
             </DropdownItem>
-            <DropdownItem><img src={calendarIcon} alt="Calendar Icon"/><span>1 event has been canceled and ...</span></DropdownItem>
-            <DropdownItem><img src={envelopeIcon} alt="Envelope Icon"/><span>you have 2 new messages</span></DropdownItem>
+            <DropdownItem href="/#/UWC/HR"><img src={calendarIcon} alt="Calendar Icon"/><span>Nghĩa đã hoàn thành xong công việc</span></DropdownItem>
+            <DropdownItem href="/#/UWC/notifications"><img src={envelopeIcon} alt="Envelope Icon"/><span>2 tin nhắn khác chưa đọc</span></DropdownItem>
           </DropdownMenu>
         </Dropdown>
         <Dropdown isOpen={notificationsOpen} toggle={() => toggleNotifications()} nav id="basic-nav-dropdown" className="ml-3">
@@ -133,8 +133,8 @@ const Header = (props) => {
           </DropdownToggle>
           <DropdownMenu className="navbar-dropdown profile-dropdown" style={{ width: "194px" }}>
             <DropdownItem className={s.dropdownProfileItem}><ProfileIcon/><span>Cá nhân</span></DropdownItem>
-            <DropdownItem className={s.dropdownProfileItem}><TasksIcon/><span>Lịch biểu</span></DropdownItem>
-            <DropdownItem className={s.dropdownProfileItem}><MessagesIcon/><span>Tin nhắn</span></DropdownItem>
+            <DropdownItem href="/#/UWC/HR" className={s.dropdownProfileItem}><TasksIcon/><span>Lịch biểu</span></DropdownItem>
+            <DropdownItem href="/#/UWC/notifications" className={s.dropdownProfileItem}><MessagesIcon/><span>Tin nhắn</span></DropdownItem>
             <NavItem>
               <NavLink onClick={() => doLogout()} href="#">
                 <button className="btn btn-primary rounded-pill mx-auto logout-btn" type="submit"><img src={logoutIcon} alt="Logout"/><span className="ml-1">Đăng xuất</span></button>

@@ -16,10 +16,10 @@ const typesIcons = {
 }
 
 const notificationMessages = {
-  info: "<span class='body-2'>Info:</span> This alert needs your attention, but it's not important.",
-  warning: "<span class='body-2'>Warning:</span> Best check yourself, you're not looking too good.",
-  success: "<span class='body-2'>Success:</span> You successfully read this important alert message.",
-  error: "<span class='body-2'>Danger:</span> Danger: Change this and that and try again.",
+  info: "<span class='body-2'>Cập nhật</span> Xe số 6 đã sẵn sàng",
+  error: "<span class='body-2'>Khẩn: </span> Điểm tập kết số 1 đã quá tải",
+  success: "<span class='body-2'>Hoàn thành:</span> Tuyến Bến Thành đã hoàn thành",
+  warning: "<span class='body-2'>Chú ý: </span> Điểm tập kết số 2 sắp đầy",
 }
 
 const colors = {
