@@ -198,7 +198,7 @@ const Tables = function () {
             <Col>
               <Widget>
                 <div className={s.tableTitle}>
-                  <div className="headline-2">Material UI table</div>
+                  <div className="headline-2">TRẠNG THÁI THU GOM</div>
                   <Dropdown
                     className="d-none d-sm-block"
                     nav
@@ -235,13 +235,12 @@ const Tables = function () {
                           <label for="checkbox200"/>
                         </div>
                       </th>
-                      <th className={s.nameCol}>NAME</th>
-                      <th>EMAIL</th>
-                      <th>PRODUCT</th>
-                      <th>PRICE</th>
-                      <th>DATE</th>
-                      <th>CITY</th>
-                      <th>STATUS</th>
+                      <th className={s.nameCol}>TUYẾN</th>
+                      <th>ĐẦU CUỐI</th>
+                      <th>MÃ XE</th>
+                      <th>TÀI XẾ</th>
+                      <th>ĐANG Ở</th>
+                      <th>TRẠNG THÁI</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -255,20 +254,19 @@ const Tables = function () {
                         <td>
                           <div className="checkbox checkbox-primary">
                             <input
-                              id={item.id}
+                              id={item.ID}
                               className="styled"
                               type="checkbox"
                             />
                             <label for={item.id} />
                           </div>
                         </td>
-                        <td>{item.name}</td>
-                        <td>{item.email}</td>
-                        <td>{item.product}</td>
-                        <td>{item.price}</td>
-                        <td>{item.date}</td>
-                        <td>{item.city}</td>
-                        <td><Badge color={item.color}>{item.status}</Badge></td>
+                        <td>{item.RouteID}</td>
+                        <td>{item.CarID}</td>
+                        <td>{item.Driver}</td>
+                        <td>{item.StartTime}</td>
+                        <td>{item.Point}</td>
+                        <td><Badge color={item.Color}>{item.Status}</Badge></td>
                       </tr>
                     ))}
                     </tbody>
@@ -304,7 +302,7 @@ const Tables = function () {
             <Col xs={12} xl={8} className="pr-grid-col">
               <Widget>
                 <div className={s.tableTitle}>
-                  <div className="headline-2">Recent transaction</div>
+                  <div className="headline-2">Thay thế gần đây</div>
                   <div>
                     <ButtonDropdown
                       isOpen={dropdownOpen}
@@ -312,12 +310,12 @@ const Tables = function () {
                       className=""
                     >
                       <DropdownToggle caret>
-                        &nbsp; Weekly &nbsp;
+                        &nbsp; Tuần &nbsp;
                       </DropdownToggle>
                       <DropdownMenu>
-                        <DropdownItem>Daily</DropdownItem>
-                        <DropdownItem>Weekly</DropdownItem>
-                        <DropdownItem>Monthly</DropdownItem>
+                        <DropdownItem>Hôm nay</DropdownItem>
+                        <DropdownItem>Tuần</DropdownItem>
+                        <DropdownItem>Tháng</DropdownItem>
                       </DropdownMenu>
                     </ButtonDropdown>
                     {/*<img src="" alt="Filter option"/>*/}
@@ -360,8 +358,30 @@ const Tables = function () {
             <Col xs={12} xl={4} className="pl-grid-col mt-4 mt-xl-0">
               <Widget>
                 <div className={s.tableTitle}>
-                  <div className="headline-2">Tasks</div>
+                  <div className="headline-2">Việc phải làm</div>
+                  <Dropdown
+                    className="d-none d-sm-block"
+                    nav
+                    isOpen={tableDropdownOpen}
+                    toggle={() => tableMenuOpen()}
+                  >
+                    <DropdownToggle nav>
+                      <img className="d-none d-sm-block" src={moreIcon} alt="More..."/>
+                    </DropdownToggle>
+                    <DropdownMenu >
+                      <DropdownItem>
+                        <div>Sửa</div>
+                      </DropdownItem>
+                      <DropdownItem>
+                        <div>Thêm</div>
+                      </DropdownItem>
+                      <DropdownItem>
+                        <div>Xoá tất cả</div>
+                      </DropdownItem>
+                    </DropdownMenu>
+                  </Dropdown>
                 </div>
+                
                 <div className={s.widgetContentBlock}>
                   <TaskContainer tasks={tasks} toggleTask={toggleTask} />
                 </div>

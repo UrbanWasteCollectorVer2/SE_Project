@@ -14,14 +14,14 @@ const ErrorPage = () => {
       <div className={s.errorContainer}>
         <h1 className={s.errorCode}>404</h1>
         <p className={s.errorInfo}>
-          Oops. Looks like the page you're looking for no longer exists
+          Oops. Có vẻ bạn đang đi lạc đâu đây rồi!!!! 
         </p>
         <p className={s.errorHelp}>
-          But we're here to bring you back to safety
+          Chúng mình sẽ đưa bạn về an toàn thôi nè!!!
         </p>
-        <Link to="/template/dashboard">
+        <Link to="/UWC/dashboard">
           <Button className={`${s.errorBtn} rounded-pill`} type="submit" color="secondary-red">
-            Back to Home
+            Về thôi
           </Button>
         </Link>
       </div>
