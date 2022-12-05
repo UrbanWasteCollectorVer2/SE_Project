@@ -120,14 +120,14 @@ const Dashboard = () => {
 
            <Widget className="widget-p-md">
                 <div className="d-flex justify-content-between">
-                  <div className="headline-3 d-flex align-items-center">{Role}</div>
+                  <a className="btn btn-primary rounded-pill mx-auto logout-btn" href='/#/UWC/HR'  >Tạo tuyến đường</a>
                   <UncontrolledDropdown>
                   {Role=="Collector"?
                     <DropdownToggle caret>
                       
                       &nbsp; Tài xế &nbsp;
                     </DropdownToggle>: null}
-                    {Role=="Janitor"?
+                    {Role=="Janitor"?  
                     <DropdownToggle caret>
                       
                       &nbsp; Lao công &nbsp;
