@@ -236,9 +236,9 @@ const Tables = function () {
                         </div>
                       </th>
                       <th className={s.nameCol}>TUYẾN</th>
-                      <th>ĐẦU CUỐI</th>
                       <th>MÃ XE</th>
                       <th>TÀI XẾ</th>
+                      <th>BẮT ĐẦU</th>
                       <th>ĐANG Ở</th>
                       <th>TRẠNG THÁI</th>
                     </tr>
@@ -340,13 +340,13 @@ const Tables = function () {
                         </DropdownToggle>
                         <DropdownMenu >
                           <DropdownItem>
-                            <div>Copy</div>
+                            <div>Download</div>
                           </DropdownItem>
                           <DropdownItem>
-                            <div>Edit</div>
+                            <div>Chỉnh</div>
                           </DropdownItem>
                           <DropdownItem>
-                            <div>Delete</div>
+                            <div>Xoá</div>
                           </DropdownItem>
                         </DropdownMenu>
                       </Dropdown>

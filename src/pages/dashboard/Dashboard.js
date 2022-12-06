@@ -21,9 +21,6 @@ const Dashboard = () => {
   const toggleCheckbox = (id) => {
     setCheckboxes(checkboxes => checkboxes
       .map((checkbox, index) => index === id ? !checkbox : checkbox ))
-
-
-
   }
 
   const ref = React.useRef(null);
@@ -31,9 +28,9 @@ const Dashboard = () => {
   const [Role, setRole] = React.useState("Collector");
   
   const location = {
-    address: '1600 Amphitheatre Parkway, Mountain View, california.',
-    lat: 37.42216,
-    lng: -122.08427,
+    address: 'Trường Đại học Bách khoa - Đại học Quốc gia TP.HCM, Lý Thường Kiệt, phường 14, Quận 10, Thành phố Hồ Chí Minh',
+    lat:  10.772094670993672, 
+    lng: 106.65817165552765,
   }
 
   return (
@@ -144,7 +141,7 @@ const Dashboard = () => {
                       <DropdownItem onClick={() => setRole("Vehicle")}>Xe</DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>
-                  <a href="/#/UWC/HR"><img className="d-none d-sm-block" src={optionsIcon} alt="Options" /></a>
+                  {/* <a href="/#/UWC/HR"><img className="d-none d-sm-block" src={optionsIcon} alt="Options" /></a> */}
                 </div>
 
 
