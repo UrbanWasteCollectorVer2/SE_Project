@@ -39,8 +39,8 @@ const Dashboard = () => {
         <Col className="pr-grid-col" xs={12} lg={8}>
           <Row className="gutter mb-4">
             <Col className="mb-4 mb-md-0" xs={12} md={12}>
-              <Widget className="">
-                 <GoogleMap/> 
+              <Widget className="widget-p-sm">
+                 <GoogleMap /> 
               </Widget>
             </Col>
            
