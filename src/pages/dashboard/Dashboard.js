@@ -49,6 +49,7 @@ const Dashboard = () => {
           <Row className="gutter">
             <Col className="mb-4 mb-xl-0" xs={6} sm={6} xl={3}>
               <Widget className="widget-p-sm">
+              <input className="col-2" type="checkbox" value="" id="flexCheckDefault"></input>
                 <div className={s.smallWidget} > 
                   <div className="d-flex mb-4" >
                     
@@ -65,6 +66,7 @@ const Dashboard = () => {
             </Col>
             <Col className="mb-4 mb-xl-0" xs={6} sm={6} xl={3}>
               <Widget className="widget-p-sm">
+              <input className="col-2" type="checkbox" value="" id="flexCheckDefault"></input>
                 <div className={s.smallWidget}>
                   <div className="d-flex mb-4">
                     <div className="d-flex flex-column">
@@ -80,10 +82,12 @@ const Dashboard = () => {
             </Col>
             <Col xs={6} sm={6} xl={3}>
               <Widget className="widget-p-sm">
+              <input className="col-2" type="checkbox" value="" id="flexCheckDefault"></input>
                 <div className={s.smallWidget}>
                   <div className="d-flex mb-4">
 
                     <div className="d-flex flex-column">
+                      
                       <p className="headline-3">Bãi tập kết số 3</p>
                       <p className="body-2">30<span className="body-3 muted">/ 100</span></p>
                     </div>
@@ -96,11 +100,14 @@ const Dashboard = () => {
             </Col>
             <Col xs={6} sm={6} xl={3}>
               <Widget className="widget-p-sm">
+              <input className="col-2" type="checkbox" value="" id="flexCheckDefault"></input>
                 <div className={s.smallWidget}>
                   <div className="d-flex mb-4">
                     
                    
                     <div className="d-flex flex-column">
+          
+   
                       <p className="headline-3">Bãi tập kết số 4</p>
                       <p className="body-2">50<span className="body-3 muted">/ 100</span></p>
                     </div>
