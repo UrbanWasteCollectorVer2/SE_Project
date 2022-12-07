@@ -21,9 +21,6 @@ const Dashboard = () => {
   const toggleCheckbox = (id) => {
     setCheckboxes(checkboxes => checkboxes
       .map((checkbox, index) => index === id ? !checkbox : checkbox ))
-
-
-
   }
 
   const ref = React.useRef(null);
@@ -31,9 +28,9 @@ const Dashboard = () => {
   const [Role, setRole] = React.useState("Collector");
   
   const location = {
-    address: '1600 Amphitheatre Parkway, Mountain View, california.',
-    lat: 37.42216,
-    lng: -122.08427,
+    address: 'Trường Đại học Bách khoa - Đại học Quốc gia TP.HCM, Lý Thường Kiệt, phường 14, Quận 10, Thành phố Hồ Chí Minh',
+    lat:  10.772094670993672, 
+    lng: 106.65817165552765,
   }
 
   return (
@@ -42,8 +39,8 @@ const Dashboard = () => {
         <Col className="pr-grid-col" xs={12} lg={8}>
           <Row className="gutter mb-4">
             <Col className="mb-4 mb-md-0" xs={12} md={12}>
-              <Widget className="">
-                 <GoogleMap/> 
+              <Widget className="widget-p-sm">
+                 <GoogleMap /> 
               </Widget>
             </Col>
            
@@ -120,14 +117,14 @@ const Dashboard = () => {
 
            <Widget className="widget-p-md">
                 <div className="d-flex justify-content-between">
-                  <div className="headline-3 d-flex align-items-center">{Role}</div>
+                  <a className="btn btn-primary rounded-pill mx-auto logout-btn" href='/#/UWC/HR'  >Tạo tuyến đường</a>
                   <UncontrolledDropdown>
                   {Role=="Collector"?
                     <DropdownToggle caret>
                       
                       &nbsp; Tài xế &nbsp;
                     </DropdownToggle>: null}
-                    {Role=="Janitor"?
+                    {Role=="Janitor"?  
                     <DropdownToggle caret>
                       
                       &nbsp; Lao công &nbsp;
@@ -144,7 +141,7 @@ const Dashboard = () => {
                       <DropdownItem onClick={() => setRole("Vehicle")}>Xe</DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>
-                  <a href="/#/UWC/HR"><img className="d-none d-sm-block" src={optionsIcon} alt="Options" /></a>
+                  {/* <a href="/#/UWC/HR"><img className="d-none d-sm-block" src={optionsIcon} alt="Options" /></a> */}
                 </div>
 
 

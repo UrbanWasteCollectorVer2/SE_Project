@@ -91,6 +91,110 @@ const Tables = function () {
     <div>
       <Row>
         <Col>
+        <Row className="mb-4">
+            <Col>
+              <Widget>
+                <div className={s.tableTitle}>
+                  <div className="headline-2">TRẠNG THÁI THU GOM</div>
+                  <Dropdown
+                    className="d-none d-sm-block"
+                    nav
+                    isOpen={tableDropdownOpen}
+                    toggle={() => tableMenuOpen()}
+                  >
+                    <DropdownToggle nav>
+                      <img className="d-none d-sm-block" src={moreIcon} alt="More..."/>
+                    </DropdownToggle>
+                    <DropdownMenu >
+                      <DropdownItem>
+                        <div>Copy</div>
+                      </DropdownItem>
+                      <DropdownItem>
+                        <div>Edit</div>
+                      </DropdownItem>
+                      <DropdownItem>
+                        <div>Delete</div>
+                      </DropdownItem>
+                    </DropdownMenu>
+                  </Dropdown>
+                </div>
+                <div className="widget-table-overflow">
+                  <Table className="table-striped table-borderless table-hover" responsive>
+                    <thead>
+                    <tr>
+                      <th>
+                        <div className="checkbox checkbox-primary">
+                          <input
+                            id="checkbox200"
+                            className="styled"
+                            type="checkbox"
+                          />
+                          <label for="checkbox200"/>
+                        </div>
+                      </th>
+                      <th className={s.nameCol}>TUYẾN</th>
+                      <th>MÃ XE</th>
+                      <th>TÀI XẾ</th>
+                      <th>BẮT ĐẦU</th>
+                      <th>ĐANG Ở</th>
+                      <th>TRẠNG THÁI</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {secondTable
+                      .slice(
+                        secondTableCurrentPage * pageSize,
+                        (secondTableCurrentPage + 1) * pageSize
+                      )
+                      .map(item => (
+                      <tr key={uuidv4()}>
+                        <td>
+                          <div className="checkbox checkbox-primary">
+                            <input
+                              id={item.ID}
+                              className="styled"
+                              type="checkbox"
+                            />
+                            <label for={item.id} />
+                          </div>
+                        </td>
+                        <td>{item.RouteID}</td>
+                        <td>{item.CarID}</td>
+                        <td>{item.Driver}</td>
+                        <td>{item.StartTime}</td>
+                        <td>{item.Point}</td>
+                        <td><Badge color={item.Color}>{item.Status}</Badge></td>
+                      </tr>
+                    ))}
+                    </tbody>
+                  </Table>
+                  <Pagination className="pagination-with-border">
+                    <PaginationItem disabled={secondTableCurrentPage <= 0}>
+                      <PaginationLink
+                        onClick={e => setSecondTablePage(e, secondTableCurrentPage - 1)}
+                        previous
+                        href="#top"
+                      />
+                    </PaginationItem>
+                    {[...Array(secondTablePagesCount)].map((page, i) =>
+                      <PaginationItem active={i === secondTableCurrentPage} key={i}>
+                        <PaginationLink onClick={e => setSecondTablePage(e, i)} href="#top">
+                          {i + 1}
+                        </PaginationLink>
+                      </PaginationItem>
+                    )}
+                    <PaginationItem disabled={secondTableCurrentPage >= secondTablePagesCount - 1}>
+                      <PaginationLink
+                        onClick={e => setSecondTablePage(e, secondTableCurrentPage + 1)}
+                        next
+                        href="#top"
+                      />
+                    </PaginationItem>
+                  </Pagination>
+                </div>
+              </Widget>
+            </Col>
+          </Row>
           <Row className="mb-4">
             <Col>
               <Widget>
@@ -194,110 +298,7 @@ const Tables = function () {
               </Widget>
             </Col>
           </Row>
-          <Row className="mb-4">
-            <Col>
-              <Widget>
-                <div className={s.tableTitle}>
-                  <div className="headline-2">TRẠNG THÁI THU GOM</div>
-                  <Dropdown
-                    className="d-none d-sm-block"
-                    nav
-                    isOpen={tableDropdownOpen}
-                    toggle={() => tableMenuOpen()}
-                  >
-                    <DropdownToggle nav>
-                      <img className="d-none d-sm-block" src={moreIcon} alt="More..."/>
-                    </DropdownToggle>
-                    <DropdownMenu >
-                      <DropdownItem>
-                        <div>Copy</div>
-                      </DropdownItem>
-                      <DropdownItem>
-                        <div>Edit</div>
-                      </DropdownItem>
-                      <DropdownItem>
-                        <div>Delete</div>
-                      </DropdownItem>
-                    </DropdownMenu>
-                  </Dropdown>
-                </div>
-                <div className="widget-table-overflow">
-                  <Table className="table-striped table-borderless table-hover" responsive>
-                    <thead>
-                    <tr>
-                      <th>
-                        <div className="checkbox checkbox-primary">
-                          <input
-                            id="checkbox200"
-                            className="styled"
-                            type="checkbox"
-                          />
-                          <label for="checkbox200"/>
-                        </div>
-                      </th>
-                      <th className={s.nameCol}>TUYẾN</th>
-                      <th>ĐẦU CUỐI</th>
-                      <th>MÃ XE</th>
-                      <th>TÀI XẾ</th>
-                      <th>ĐANG Ở</th>
-                      <th>TRẠNG THÁI</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {secondTable
-                      .slice(
-                        secondTableCurrentPage * pageSize,
-                        (secondTableCurrentPage + 1) * pageSize
-                      )
-                      .map(item => (
-                      <tr key={uuidv4()}>
-                        <td>
-                          <div className="checkbox checkbox-primary">
-                            <input
-                              id={item.ID}
-                              className="styled"
-                              type="checkbox"
-                            />
-                            <label for={item.id} />
-                          </div>
-                        </td>
-                        <td>{item.RouteID}</td>
-                        <td>{item.CarID}</td>
-                        <td>{item.Driver}</td>
-                        <td>{item.StartTime}</td>
-                        <td>{item.Point}</td>
-                        <td><Badge color={item.Color}>{item.Status}</Badge></td>
-                      </tr>
-                    ))}
-                    </tbody>
-                  </Table>
-                  <Pagination className="pagination-with-border">
-                    <PaginationItem disabled={secondTableCurrentPage <= 0}>
-                      <PaginationLink
-                        onClick={e => setSecondTablePage(e, secondTableCurrentPage - 1)}
-                        previous
-                        href="#top"
-                      />
-                    </PaginationItem>
-                    {[...Array(secondTablePagesCount)].map((page, i) =>
-                      <PaginationItem active={i === secondTableCurrentPage} key={i}>
-                        <PaginationLink onClick={e => setSecondTablePage(e, i)} href="#top">
-                          {i + 1}
-                        </PaginationLink>
-                      </PaginationItem>
-                    )}
-                    <PaginationItem disabled={secondTableCurrentPage >= secondTablePagesCount - 1}>
-                      <PaginationLink
-                        onClick={e => setSecondTablePage(e, secondTableCurrentPage + 1)}
-                        next
-                        href="#top"
-                      />
-                    </PaginationItem>
-                  </Pagination>
-                </div>
-              </Widget>
-            </Col>
-          </Row>
+
           <Row>
             <Col xs={12} xl={8} className="pr-grid-col">
               <Widget>
@@ -340,13 +341,13 @@ const Tables = function () {
                         </DropdownToggle>
                         <DropdownMenu >
                           <DropdownItem>
-                            <div>Copy</div>
+                            <div>Download</div>
                           </DropdownItem>
                           <DropdownItem>
-                            <div>Edit</div>
+                            <div>Chỉnh</div>
                           </DropdownItem>
                           <DropdownItem>
-                            <div>Delete</div>
+                            <div>Xoá</div>
                           </DropdownItem>
                         </DropdownMenu>
                       </Dropdown>
