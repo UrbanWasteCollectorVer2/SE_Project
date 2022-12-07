@@ -91,110 +91,7 @@ const Tables = function () {
     <div>
       <Row>
         <Col>
-          <Row className="mb-4">
-            <Col>
-              <Widget>
-                <div className={s.tableTitle}>
-                  <div className="headline-2">Nhân sự</div>
-                  <div className="d-flex">
-                    <a href="/#"><img src={searchIcon} alt="Search"/></a>
-                    <a href="/#"><img className="d-none d-sm-block" src={cloudIcon} alt="Cloud" /></a>
-                    <a href="/#"><img src={printerIcon} alt="Printer" /></a>
-                    <a href="/#"><img className="d-none d-sm-block" src={optionsIcon} alt="Options" /></a>
-                    <a href="/#"><img src={funnelIcon} alt="Funnel" /></a>
-                  </div>
-                </div>
-                <div className="widget-table-overflow">
-                  <Table className={`table-striped table-borderless table-hover ${s.statesTable}`} responsive>
-                    <thead>
-                    <tr>
-                      <th className={s.checkboxCol}>
-                        <div className="checkbox checkbox-primary">
-                          <input
-                            className="styled"
-                            id="checkbox100"
-                            type="checkbox"
-                          />
-                          <label for="checkbox100"/>
-                        </div>
-                      </th>
-                      <th className="w-25   ">     TÊN</th>
-                      <th className="w-25">ĐIỆN THOẠI</th>
-                      <th className="w-25">VAI TRÒ</th>
-                      <th className="w-25">TRẠNG THÁI</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {firstTable
-                      .slice(
-                        firstTableCurrentPage * pageSize,
-                        (firstTableCurrentPage + 1) * pageSize
-                      )
-                      .map(item => (
-                        <tr key={uuidv4()}>
-                          <td>
-                            <div className="checkbox checkbox-primary">
-                              <input
-                                id={item.ID}
-                                className="styled"
-                                type="checkbox"
-                              />
-                              <Label for={item.ID} />
-                            </div>
-                          </td>
-                          <td className="d-flex align-items-center"><img className={s.image} src={item.img} alt="User"/><span className="ml-3">{item.Name}</span></td>
-                          <td>{item.PhoneNum}</td>
-                          {item.Role==="Collector"?
-                          <td>Tài xế</td>:<td>Nhân viên vệ sinh</td>}
-                          
-                          {item.Status==='Working'?
-                      <td className="text-primary">
-                        {item.Status}
-                      </td>:null}
-                      {item.Status==='Busy'?
-                      <td className="text-warning">
-                        {item.Status}
-                      </td>:null}
-                      {item.Status==='Absent'?
-                      <td className="text-secondary">
-                        {item.Status}
-                      </td>:null}
-                      {item.Status==='Ready'?
-                      <td className="text-success">
-                        {item.Status}
-                      </td>:null}
-                        </tr>
-                      ))}
-                    </tbody>
-                  </Table>
-                  <Pagination className="pagination-borderless" aria-label="Page navigation example">
-                    <PaginationItem disabled={firstTableCurrentPage <= 0}>
-                      <PaginationLink
-                        onClick={e => setFirstTablePage(e, firstTableCurrentPage - 1)}
-                        previous
-                        href="#top"
-                      />
-                    </PaginationItem>
-                    {[...Array(firstTablePagesCount)].map((page, i) =>
-                      <PaginationItem active={i === firstTableCurrentPage} key={i}>
-                        <PaginationLink onClick={e => setFirstTablePage(e, i)} href="#top">
-                          {i + 1}
-                        </PaginationLink>
-                      </PaginationItem>
-                    )}
-                    <PaginationItem disabled={firstTableCurrentPage >= firstTablePagesCount - 1}>
-                      <PaginationLink
-                        onClick={e => setFirstTablePage(e, firstTableCurrentPage + 1)}
-                        next
-                        href="#top"
-                      />
-                    </PaginationItem>
-                  </Pagination>
-                </div>
-              </Widget>
-            </Col>
-          </Row>
-          <Row className="mb-4">
+        <Row className="mb-4">
             <Col>
               <Widget>
                 <div className={s.tableTitle}>
@@ -298,6 +195,110 @@ const Tables = function () {
               </Widget>
             </Col>
           </Row>
+          <Row className="mb-4">
+            <Col>
+              <Widget>
+                <div className={s.tableTitle}>
+                  <div className="headline-2">Nhân sự</div>
+                  <div className="d-flex">
+                    <a href="/#"><img src={searchIcon} alt="Search"/></a>
+                    <a href="/#"><img className="d-none d-sm-block" src={cloudIcon} alt="Cloud" /></a>
+                    <a href="/#"><img src={printerIcon} alt="Printer" /></a>
+                    <a href="/#"><img className="d-none d-sm-block" src={optionsIcon} alt="Options" /></a>
+                    <a href="/#"><img src={funnelIcon} alt="Funnel" /></a>
+                  </div>
+                </div>
+                <div className="widget-table-overflow">
+                  <Table className={`table-striped table-borderless table-hover ${s.statesTable}`} responsive>
+                    <thead>
+                    <tr>
+                      <th className={s.checkboxCol}>
+                        <div className="checkbox checkbox-primary">
+                          <input
+                            className="styled"
+                            id="checkbox100"
+                            type="checkbox"
+                          />
+                          <label for="checkbox100"/>
+                        </div>
+                      </th>
+                      <th className="w-25   ">     TÊN</th>
+                      <th className="w-25">ĐIỆN THOẠI</th>
+                      <th className="w-25">VAI TRÒ</th>
+                      <th className="w-25">TRẠNG THÁI</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {firstTable
+                      .slice(
+                        firstTableCurrentPage * pageSize,
+                        (firstTableCurrentPage + 1) * pageSize
+                      )
+                      .map(item => (
+                        <tr key={uuidv4()}>
+                          <td>
+                            <div className="checkbox checkbox-primary">
+                              <input
+                                id={item.ID}
+                                className="styled"
+                                type="checkbox"
+                              />
+                              <Label for={item.ID} />
+                            </div>
+                          </td>
+                          <td className="d-flex align-items-center"><img className={s.image} src={item.img} alt="User"/><span className="ml-3">{item.Name}</span></td>
+                          <td>{item.PhoneNum}</td>
+                          {item.Role==="Collector"?
+                          <td>Tài xế</td>:<td>Nhân viên vệ sinh</td>}
+                          
+                          {item.Status==='Working'?
+                      <td className="text-primary">
+                        {item.Status}
+                      </td>:null}
+                      {item.Status==='Busy'?
+                      <td className="text-warning">
+                        {item.Status}
+                      </td>:null}
+                      {item.Status==='Absent'?
+                      <td className="text-secondary">
+                        {item.Status}
+                      </td>:null}
+                      {item.Status==='Ready'?
+                      <td className="text-success">
+                        {item.Status}
+                      </td>:null}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </Table>
+                  <Pagination className="pagination-borderless" aria-label="Page navigation example">
+                    <PaginationItem disabled={firstTableCurrentPage <= 0}>
+                      <PaginationLink
+                        onClick={e => setFirstTablePage(e, firstTableCurrentPage - 1)}
+                        previous
+                        href="#top"
+                      />
+                    </PaginationItem>
+                    {[...Array(firstTablePagesCount)].map((page, i) =>
+                      <PaginationItem active={i === firstTableCurrentPage} key={i}>
+                        <PaginationLink onClick={e => setFirstTablePage(e, i)} href="#top">
+                          {i + 1}
+                        </PaginationLink>
+                      </PaginationItem>
+                    )}
+                    <PaginationItem disabled={firstTableCurrentPage >= firstTablePagesCount - 1}>
+                      <PaginationLink
+                        onClick={e => setFirstTablePage(e, firstTableCurrentPage + 1)}
+                        next
+                        href="#top"
+                      />
+                    </PaginationItem>
+                  </Pagination>
+                </div>
+              </Widget>
+            </Col>
+          </Row>
+
           <Row>
             <Col xs={12} xl={8} className="pr-grid-col">
               <Widget>
